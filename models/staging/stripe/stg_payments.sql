@@ -1,10 +1,10 @@
-SELECT
-    ID AS PAYMENT_ID,
-    ORDERID AS ORDER_ID,
-    PAYMENTMETHOD AS PAYMENT_METHOD,
-    STATUS,
-    AMOUNT AS RAW_AMOUNT,
-    {{cents2dollars('AMOUNT')}} as AMOUNT_DOLLARS,
-    CREATED,
-    _BATCHED_AT
-FROM {{source('stripe','payment')}}
+select
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status,
+    amount as raw_amount,
+    {{cents2dollars('amount')}} as amount_dollars,
+    created,
+    _batched_at
+from {{source('stripe','payment')}}
