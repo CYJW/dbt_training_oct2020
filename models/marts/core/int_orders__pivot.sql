@@ -20,7 +20,4 @@ pivoted as (
         )
 )
 
-
-sum(case when payment_method = 'bank_transfer' then amount else 0 end) as bank_transfer_payment,
-
-select 
+select * from pivoted
